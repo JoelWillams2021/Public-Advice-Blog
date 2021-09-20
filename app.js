@@ -25,7 +25,7 @@ const postSchema = mongoose.Schema({
 
   const p = new Post({
       Title: "Place the title of your advice in this header",
-      message: "Place the message/content of your advice in this paragraph section"
+      message: "Place the message/content of your advice in this paragraph section. You can delete posts by checking this check box, however you can't delete this post"
 
   });
 
