@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="shortcut icon" href="images/blog.png" type="image/x-icon">
+    <title>Public Advice Blog</title>
+</head>
+<body>
+
+    <h1 class="text-center mt-3"> Public Advice Blog</h1>
+    <h2 class="text-center mt-3"> Help Motivate Someone Today!</h1>
+    
+    <% postTitle.forEach(function(post){ %>
+      <form action = "/delete" method="post">
+        <div class="card m-4">
+            <div class="card-body bg-secondary text-white">
+              <h5 class="card-title-white"><%= post.Title %></h5>
+              <h6 class="card-subtitle mb-2"><%= post.message %></h6>
+              <input type="checkbox" name="Delete" onChange= "this.form.submit()" value="<%= post._id%>">
+            </div>
+          </div>
+        </form> 
+
+      <% }); %>
+
+      <form action ="/" method="post">
+      <div class="m-4">
+        <label for="exampleInputEmail1" class="form-label">Title of your Advice:</label>
+        <textarea type="text" class="form-control" name ="title"></textarea>
+      </div>
+      <div class="m-4">
+        <label for="exampleInputPassword1" class="form-label">Content of your Advice:</label>
+        <textarea type="text" class="form-control" name="message"></textarea> 
+      </div>
+      <button type="submit" class="btn btn-primary m-4">Submit</button>
+    </form>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+ 
+    
+</body>
+</html>
